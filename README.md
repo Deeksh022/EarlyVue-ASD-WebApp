@@ -78,7 +78,7 @@ python api.py # or the main entry point of your Python server
 npm start
 ```
 
-The application will now be running at `http://localhost:3000` (or the port defined in your `craco.config.js`).
+The application will now be running at `http://localhost:3000`.
 
 -----
 
@@ -141,16 +141,6 @@ The application is built with a security-first approach:
 6.  **Report:** A comprehensive PDF report can be generated and downloaded for record-keeping.
 
 -----
-
-## 🤝 Contributing & Support
-
-We welcome contributions to EarlyVue. Please refer to the guidelines in the `CONTRIBUTING.md` (if available) or follow the standard workflow:
-
-1.  Fork the repository.
-2.  Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3.  Commit your changes (`git commit -m 'feat: Add AmazingFeature'`).
-4.  Push to the branch (`git push origin feature/AmazingFeature`).
-5.  Open a Pull Request.
 
 ### Support
 
