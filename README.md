@@ -1,205 +1,162 @@
 # EarlyVue - ASD Screening Application
 
-A comprehensive web application for ASD (Autism Spectrum Disorder) screening with patient management, built with React and Supabase.
+A production-ready, full-stack web application designed for accurate and accessible screening of Autism Spectrum Disorder (ASD). Built with **React** for the frontend, **Node.js** for the API, **Python** for advanced machine learning/data processing, and **Supabase** for secure data persistence.
 
-## 🚀 Quick Start
+## 🚀 Quick Start: Full Production Setup
 
-### Option 1: Demo Mode (No Setup Required)
+### Prerequisites
 
-The application runs in demo mode by default, allowing you to explore all features without any configuration:
+You must have **Node.js** (v16+) and **Python** (v3.11+) installed.
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd earlyvue-parent-dashboard
-   ```
+### 1\. Clone and Configure
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/Deeksh022/EarlyVue-ASD-WebApp.git
+cd EarlyVue-ASD-WebApp
+```
 
-3. **Start the application**
-   ```bash
-   npm start
-   ```
+### 2\. Set Up Environment Variables
 
-4. **Login with demo credentials**
-   - Email: `demo@earlyvue.com`
-   - Password: `password`
-   - Or click "Use Demo Credentials" button
+Create a `.env` file in the project root by copying the example:
 
-### Option 2: Full Supabase Setup
+```bash
+cp .env.example .env
+```
 
-For production use with real data persistence:
-
-1. **Set up Supabase project**
-   - Go to [supabase.com](https://supabase.com)
-   - Create a new project
-   - Note your project URL and anon key
-
-2. **Configure environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your Supabase credentials
-   ```
-
-3. **Create database tables**
-   - Copy SQL commands from `SUPABASE_SETUP.md`
-   - Run them in your Supabase SQL Editor
-
-4. **Start the application**
-   ```bash
-   npm start
-   ```
-
-## 🎯 Features
-
-### Authentication & User Management
-- ✅ **Secure Login/Registration** - Supabase Auth integration
-- ✅ **Demo Mode** - Works without external dependencies
-- ✅ **Session Management** - Automatic token handling
-- ✅ **Password Validation** - Strength indicators and requirements
-
-### Patient Management
-- ✅ **Add Patients** - Complete patient information forms
-- ✅ **Patient Profiles** - View and manage patient data
-- ✅ **Medical History** - Track screening history
-- ✅ **Data Persistence** - All data stored securely
-
-### ASD Screening
-- ✅ **Multiple Screening Types** - ASD, Developmental, Language assessments
-- ✅ **Real-time Results** - Immediate feedback and recommendations
-- ✅ **Progress Tracking** - Monitor developmental progress
-- ✅ **Report Generation** - Download detailed reports
-
-### Professional Features
-- ✅ **Resource Library** - Educational materials and guides
-- ✅ **Specialist Finder** - Connect with healthcare professionals
-- ✅ **Help & Support** - Comprehensive user assistance
-- ✅ **Responsive Design** - Works on all devices
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Create a `.env` file in the root directory:
+Edit the new `.env` file with your **Supabase credentials** and backend API port:
 
 ```env
-REACT_APP_SUPABASE_URL=https://your-project-id.supabase.co
-REACT_APP_SUPABASE_ANON_KEY=your-anon-key-here
+# Supabase Configuration
+REACT_APP_SUPABASE_URL=https: https://eovhilaldwbjwmvnosgq.supabase.co
+REACT_APP_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+
+# Backend Configuration
+REACT_APP_BACKEND_API_URL=http://localhost:5000
 ```
 
-### Database Schema
+### 3\. Install Dependencies
 
-The application uses four main tables:
+Install dependencies for both the React frontend and the Python backend.
 
-- **users** - User accounts and profiles
-- **patients** - Patient information linked to users
-- **screenings** - Screening sessions and metadata
-- **screening_results** - Detailed screening results and recommendations
+```bash
+# Frontend (React/Node.js)
+npm install
 
-## 🎮 Demo Mode vs Supabase Mode
-
-### Demo Mode
-- ✅ **No Setup Required** - Works immediately
-- ✅ **All Features Available** - Full functionality
-- ✅ **Local Storage** - Data persists in browser
-- ✅ **Perfect for Testing** - Explore without commitment
-
-### Supabase Mode
-- ✅ **Real Database** - Data persists across devices
-- ✅ **User Authentication** - Secure login system
-- ✅ **Multi-user Support** - Multiple users can have accounts
-- ✅ **Production Ready** - Suitable for real-world use
-
-## 🏗️ Architecture
-
-### Frontend
-- **React 18** - Modern React with hooks
-- **React Router** - Client-side routing
-- **CSS Modules** - Scoped styling
-- **Responsive Design** - Mobile-first approach
-
-### Backend
-- **Supabase** - PostgreSQL database with real-time features
-- **Row Level Security** - Automatic data isolation
-- **Authentication** - Built-in user management
-- **API** - RESTful endpoints for data operations
-
-### Security
-- **Row Level Security (RLS)** - Users only see their own data
-- **Secure Authentication** - JWT tokens with automatic refresh
-- **Input Validation** - Client and server-side validation
-- **HTTPS Only** - Secure data transmission
-
-## 📱 Usage Guide
-
-### For New Users
-1. **Register** - Create an account with email and password
-2. **Add Patient** - Enter your child's information
-3. **Start Screening** - Choose appropriate screening type
-4. **View Results** - Review detailed assessment reports
-5. **Track Progress** - Monitor developmental milestones
-
-### For Healthcare Providers
-1. **Access Dashboard** - View all patient screenings
-2. **Review Results** - Detailed assessment analysis
-3. **Generate Reports** - Download comprehensive reports
-4. **Resource Access** - Educational materials and guidelines
-
-## 🔍 Troubleshooting
-
-### Common Issues
-
-#### Login/Register Not Working
-- **Demo Mode**: Check if you're using the correct demo credentials
-- **Supabase Mode**: Verify your environment variables are set correctly
-
-#### Data Not Saving
-- **Demo Mode**: Data is stored in localStorage (cleared when browser data is cleared)
-- **Supabase Mode**: Check your database connection and RLS policies
-
-#### Application Not Loading
-- Ensure all dependencies are installed: `npm install`
-- Check for any console errors in browser developer tools
-- Verify Node.js version (recommended: 16+)
-
-### Debug Mode
-
-Enable debug logging by opening browser console:
-```javascript
-localStorage.setItem('debug', 'true');
+# Backend (Python)
+cd backend
+# Assuming your virtual environment is named 'venv' and Python is in the PATH
+python -m venv venv
+./venv/Scripts/activate # Use 'source venv/bin/activate' on Linux/Mac
+pip install -r requirements.txt
+cd ..
 ```
 
-## 🤝 Contributing
+### 4\. Database Setup
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+Ensure your Supabase project is configured:
 
-## 📄 License
+1.  Go to the Supabase SQL Editor.
+2.  Run the **SQL commands** found in the `SUPABASE_SETUP.md` file to create the necessary tables (`users`, `patients`, `screenings`, `screening_results`).
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+### 5\. Run the Application (Dual Start)
 
-## 🆘 Support
+You must run the frontend and the backend simultaneously in separate terminals.
 
-- **Documentation**: Check `SUPABASE_SETUP.md` for detailed setup instructions
-- **Issues**: Report bugs and request features on GitHub
-- **Discussions**: Join community discussions for support
+**Terminal 1: Start Python Backend (API/ML Logic)**
 
-## 🎯 Roadmap
+```bash
+cd backend
+# Activate the environment (if not already)
+./venv/Scripts/activate # Use 'source venv/bin/activate' on Linux/Mac
+python api.py # or the main entry point of your Python server
+```
 
-### Upcoming Features
-- [ ] Mobile App (React Native)
-- [ ] Advanced Analytics Dashboard
-- [ ] Integration with EHR systems
-- [ ] Multi-language support
-- [ ] Offline mode capabilities
-- [ ] Advanced reporting features
+**Terminal 2: Start React Frontend**
 
----
+```bash
+npm start
+```
 
-**EarlyVue** - Making ASD screening accessible, accurate, and actionable for families and healthcare providers worldwide.
+The application will now be running at `http://localhost:3000` (or the port defined in your `craco.config.js`).
+
+-----
+
+## 🎯 Core Features and Functionality
+
+EarlyVue is a complete system that manages user authentication, patient data, screening execution, and predictive results.
+
+| Feature Area | Key Functionality | Status |
+| :--- | :--- | :--- |
+| **Full Authentication** | Secure Login/Registration using **Supabase Auth**. | ✅ |
+| **Patient Management** | Comprehensive patient profiles, medical history tracking, and data persistence. | ✅ |
+| **Core Screening Engine** | Execution of **ASD and Developmental Assessments**. | ✅ |
+| **Machine Learning Backend** | **Python** module for risk analysis and report generation. | ✅ |
+| **Real-time Results** | Immediate feedback, risk indicators, and actionable recommendations. | ✅ |
+| **Report Generation** | Downloadable, detailed reports for professionals and parents. | ✅ |
+
+-----
+
+## 🏗️ Technical Architecture
+
+EarlyVue utilizes a robust, modern full-stack architecture to ensure scalability, speed, and data security.
+
+### Frontend (User Interface)
+
+  * **React 18:** For a dynamic and responsive user experience.
+  * **React Router:** For efficient client-side navigation.
+  * **Styled Components/CSS Modules:** For scoped, maintainable styling.
+
+### Backend & Data (Application Logic)
+
+  * **Node.js / Express:** Serves the primary API and handles routing, connecting the frontend to the Python microservice.
+  * **Python (3.11+):** Dedicated microservice for complex tasks:
+      * **ASD Detection:** Runs core predictive models (DNN, RF, SVM, Ensemble) on screening data.
+      * **Data Processing:** Feature scaling and result interpretation.
+      * **Report Generation:** Creates detailed, downloadable PDF reports.
+  * **Supabase:** The core database and authentication platform.
+      * **PostgreSQL:** Secure, robust relational data storage.
+      * **Row Level Security (RLS):** Ensures users can only access data relevant to their profile.
+
+-----
+
+## 🔒 Security and Compliance
+
+The application is built with a security-first approach:
+
+  * **Data Isolation (RLS):** All data is protected by Supabase RLS policies, ensuring strict segregation of user and patient records.
+  * **Secure Authentication:** Utilizes standard JWT tokens and automatic refresh provided by Supabase.
+  * **Input Validation:** Robust client-side and server-side validation to prevent injection and corruption.
+  * **Encrypted Transmission:** All data transfer is secured via **HTTPS**.
+
+-----
+
+## 📱 Usage Guide: The Screening Workflow
+
+1.  **Register/Login:** New users create an account; returning users log in securely.
+2.  **Add Patient:** Create a profile for the child being screened.
+3.  **Start Screening:** Select the assessment type. The frontend collects input and sends the data to the Node.js API.
+4.  **Backend Processing:** The Node.js layer forwards the data to the Python microservice, which runs the ML models.
+5.  **View Results:** The final risk assessment and recommendations are displayed immediately on the dashboard.
+6.  **Report:** A comprehensive PDF report can be generated and downloaded for record-keeping.
+
+-----
+
+## 🤝 Contributing & Support
+
+We welcome contributions to EarlyVue. Please refer to the guidelines in the `CONTRIBUTING.md` (if available) or follow the standard workflow:
+
+1.  Fork the repository.
+2.  Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your changes (`git commit -m 'feat: Add AmazingFeature'`).
+4.  Push to the branch (`git push origin feature/AmazingFeature`).
+5.  Open a Pull Request.
+
+### Support
+
+  * **Issues:** Report bugs and request features via the GitHub Issues page.
+  * **Documentation:** Consult `SUPABASE_SETUP.md` for in-depth database and backend configuration details.
+
+-----
+
+**EarlyVue** - Providing accurate, accessible, and actionable ASD screening tools worldwide.
